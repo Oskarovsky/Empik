@@ -1,6 +1,7 @@
 package com.oskarro.empik.service;
 
 import com.oskarro.empik.gateway.GithubGateway;
+import com.oskarro.empik.model.GithubField;
 import com.oskarro.empik.model.User;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
@@ -23,13 +24,13 @@ public class UserServiceBean implements UserService {
     private User convertToApi(final String content) {
         final JSONObject obj = new JSONObject(content);
         return User.builder()
-                .login(obj.getString("login"))
-                .id(obj.getLong("id"))
-                .avatarUrl(obj.getString("avatar_url"))
-                .name(obj.getString("name"))
-                .type(obj.getString("type"))
-                .createdAt(obj.getString("created_at"))
-                .calculations(calculate(obj.getDouble("followers"), obj.getDouble("public_repos")))
+                .login(obj.getString(GithubField.USER_LOGIN.key))
+                .id(obj.getLong(GithubField.USER_ID.key))
+                .avatarUrl(obj.getString(GithubField.USER_AVATAR.key))
+                .name(obj.getString(GithubField.USER_NAME.key))
+                .type(obj.getString(GithubField.USER_TYPE.key))
+                .createdAt(obj.getString(GithubField.CREATED_DATE.key))
+                .calculations(calculate(obj.getDouble(GithubField.FOLLOWERS.key), obj.getDouble(GithubField.REPOS.key)))
                 .build();
     }
 

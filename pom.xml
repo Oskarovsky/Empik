@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.oskarro</groupId>
     <artifactId>Empik</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <description>Application for recruitment process</description>
+    <version>1.0</version>
+    <description>Application for fetching information about github user</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -69,6 +69,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
 
