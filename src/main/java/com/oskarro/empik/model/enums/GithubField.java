@@ -1,4 +1,4 @@
-package com.oskarro.empik.model;
+package com.oskarro.empik.model.enums;
 
 public enum GithubField {
 

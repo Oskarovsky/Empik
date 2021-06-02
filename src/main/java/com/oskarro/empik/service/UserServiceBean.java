@@ -1,7 +1,7 @@
 package com.oskarro.empik.service;
 
 import com.oskarro.empik.gateway.GithubGateway;
-import com.oskarro.empik.model.GithubField;
+import com.oskarro.empik.model.enums.GithubField;
 import com.oskarro.empik.model.User;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
