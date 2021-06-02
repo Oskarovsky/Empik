@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
-@Transactional
 @Service
 public class RequestServiceBean implements RequestService {
 
@@ -17,6 +16,7 @@ public class RequestServiceBean implements RequestService {
         this.requestRepo = requestRepo;
     }
 
+    @Transactional
     public void upsertRequest(final String login) {
         Optional<Request> request = requestRepo.findById(login);
         if (request.isPresent()) {
